@@ -1,0 +1,40 @@
+list1 = []  # Initialize an empty list
+
+while True:
+    choice = input('Do you want to create or continue a to-do list? Enter your choice (yes or no): ')
+
+    if choice.lower() == 'no':
+        break  # Exit the loop if the user enters 'no'
+
+    if choice.lower() == 'yes':
+        print("The operations you can perform are:\n1. ADD\n2. REMOVE\n3. QUIT")
+        choose = int(input('Enter the operation you want to do (1 / 2 / 3): '))
+
+        if choose == 1:
+            print(f'The things in the list are: {list1}') 
+            add = input('Enter the things you want to do separated by "&": ')
+            elements = add.split("&")
+            list1.extend(elements)
+            print(list1)
+
+        elif choose == 2:
+            if not list1:
+                print("The list is empty. Nothing to remove.")
+            else:
+                print('The things in the list are:')
+                for index, thing in enumerate(list1):
+                    print(f'{index} : {thing}')
+                option = int(input('Enter the index of the thing you want to remove: '))
+                if 0 <= option < len(list1):
+                    removed_item = list1.pop(option)
+                    print(f'Removed: {removed_item}')
+                    print(f'The remaining things to do in the list are: {list1}')
+                else:
+                    print('Invalid index. No item removed.')
+
+        elif choose == 3:
+            break  # Exit the loop if the user chooses to quit
+
+        else:
+            print('Invalid option')
+
