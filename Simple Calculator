@@ -1,0 +1,49 @@
+#Calculator: Create a basic command-line calculator that can perform addition, subtraction, multiplication, and division.
+
+#creating function for each operation
+def addition(x, y):
+    return x + y
+
+def subtraction(x, y):
+    return x - y
+
+def multiplication(x, y):
+    return x * y
+
+def division(x, y):
+    if y == 0:
+        return "Division by zero is not allowed"
+    else:
+        return x / y
+
+#asking the user to choose the operation they want to perform
+print('The operations you can perform are:')
+print('1. Addition')
+print('2. Subtraction')
+print('3. Multiplication')
+print('4. Division')
+
+choose_option = int(input('Enter the operation you want to perform (1/2/3/4): '))
+
+#creation if-else statement if the chosen operation is present or not, if not present asking the user to re-enter the choose_option
+if choose_option in [1, 2, 3, 4]:
+    num1 = float(input('Enter the first number: '))
+    num2 = float(input('Enter the second number: '))
+
+    #if-elif statement to check to see which operation they should perform
+    if choose_option == 1:
+        result = addition(num1, num2)
+        operation_name = "addition"
+    elif choose_option == 2:
+        result = subtraction(num1, num2)
+        operation_name = "subtraction"
+    elif choose_option == 3:
+        result = multiplication(num1, num2)
+        operation_name = "multiplication"
+    elif choose_option == 4:
+        result = division(num1, num2)
+        operation_name = "division"
+
+    print(f'The {operation_name} of {num1} and {num2} is: {result}')
+else:
+    print('Invalid operation! Please choose a valid operation (1/2/3/4).')
