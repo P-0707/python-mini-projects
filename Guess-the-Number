@@ -1,0 +1,32 @@
+#Guess the Number: Develop a game where the computer generates a random number, and the player has to guess it.
+
+import random
+
+lower = int(input('Enter the lower bound of the number: '))
+upper = int(input('Enter the upper bound of the number: '))
+
+#exludes the upper and lower number you have entered
+random_number = random.randint(lower + 1, upper - 1)
+
+attempts = 3
+
+print('You have three chances to guess the number in the range you have provided !! \n\nAll the best!!')
+
+while attempts > 0:  # Changed to loop while there are remaining attempts.
+    number = int(input('\n\nEnter the number you have guessed: '))
+    if number == random_number:
+        print('\nYou have guessed the correct number!! Congrats!')
+        break  # Exit the loop if the guess is correct.
+    else:
+        attempts -= 1
+        print(f'\nOops! you guessed the wrong number! The number of attempts left are {attempts}')
+        if random_number > number:
+            print('\nThe number you have entered is low!')
+        elif random_number < number:
+            print('\nThe number you have entered is high!')
+    
+if attempts == 0:
+    print('\nYou lost the game!! Play well next time!!')
+    print(f'\nThe correct number is {random_number}')
+
+
