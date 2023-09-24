@@ -1,0 +1,21 @@
+# Temperature Converter: program that converts temperatures between Celsius and Fahrenheit.
+
+while True:
+    temp = str(input('\n\nEnter "c" if you want to convert Celsius to Fahrenheit else \n"f" if you want to convert Fahrenheit to Celsius or \n"q" to quit): \n'))
+    
+    if temp.lower() == 'q':
+        print('\nGoodbye!')
+        break  # Exit the loop and end the program if the user enters 'q'.
+    
+    if temp.lower() == 'c':
+        deg = float(input('\nEnter the Celsius temperature: '))
+        fah = (deg * 9/5) + 32
+        print(f'\nThe temperature in Fahrenheit is: {fah}°F')
+    
+    elif temp.lower() == 'f':
+        deg = float(input('\nEnter the Fahrenheit temperature: '))
+        cel = (deg - 32) * 5/9
+        print(f'\nThe temperature in Celsius is: {cel}°C')
+    
+    else:
+        print('\nYou have entered an invalid input. Please enter "c" or "f".')
