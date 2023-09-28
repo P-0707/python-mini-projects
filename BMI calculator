@@ -1,0 +1,38 @@
+#BMI Calculator: Develop a program that calculates Body Mass Index (BMI) based on user input for weight and height.
+
+while True:
+    user = input("\n\nDo you want to continue to BMI(Body Mass Index) Calculator(Yes/No): \n")
+    
+    if user.lower() == 'yes':
+        print("\n\n* Welcome to the BMI calculator! *")
+        height = float(input("\nEnter your height in meters: "))
+        weight = float(input("Enter your weight in kilograms: "))
+        
+        full_bmi = weight / ( height * height )
+        
+        bmi = round(full_bmi, 2)
+        
+        print(f"\n\nThe BMI values of you is: {bmi} kg/m^2")
+        
+        if bmi < 18.5 :
+            print("\nYou are underweight according to you BMI values!!")
+            print( "Consider increasing your calorie intake with nutritious foods to achieve a healthier weight.")
+            
+        elif 18.5 <= bmi <= 24.9:
+            print("\nYou are in normal weight according to the BMI values!!")
+            print("Maintain your current healthy habits, including regular exercise and a balanced diet.")
+            
+        elif 24.9 <= bmi <= 29.9:
+            print("\nYou are overweight according to the BMI values!!")
+            print("Incorporate more physical activity into your routine and be mindful of portion sizes.")
+            
+        elif bmi >= 30:
+            print("\nyou are obese according to the BMI values!!")
+            print( "Consult a healthcare professional for guidance on creating a weight management plan.")
+            
+        else :
+            print("\n\nyou entered invalid values !!")
+            
+    else:
+        print("\nExiting the program")
+        break
