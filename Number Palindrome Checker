@@ -1,0 +1,17 @@
+# Number Palindrome Checker: Create a program that checks if a given number is a palindrome (reads the same forwards and backwards).
+# they are many ways to check for the palindrome number as well as methods but its one of the basic way to check without converting the int to string 
+
+while True:
+    num = int(input("\n\nEnter the number: "))
+    original_num = num
+    reverse_num = 0  # Corrected variable name
+    
+    while num > 0:
+        digit = num % 10
+        reverse_num = reverse_num * 10 + digit
+        num = num // 10
+        
+    if original_num == reverse_num:
+        print(f"\nThe {original_num} is palindrome")
+    else:
+        print(f"\nThe {original_num} is not a palindrome")
