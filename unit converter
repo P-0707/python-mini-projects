@@ -1,0 +1,69 @@
+def length_converter(value, unit_from, unit_to):
+    conversion_factors = {
+        "meters": 1.0,
+        "centimeters": 100.0,
+        "millimeters": 1000.0,
+        "kilometers": 0.001,
+        "inches": 39.3701,
+        "feet": 3.2808,
+    }
+
+    unit_from = unit_from.lower()  # Convert to lowercase
+    unit_to = unit_to.lower()      # Convert to lowercase
+
+    if unit_from in conversion_factors and unit_to in conversion_factors:
+        return value * (conversion_factors[unit_to] / conversion_factors[unit_from])
+    else:
+        return "Invalid units for length conversion."
+
+def weight_converter(value, unit_from, unit_to):
+    conversion_factors = {
+        "kilograms": 1.0,
+        "grams": 1000.0,
+        "milligrams": 1000000.0,
+        "tonnes": 0.001,
+        "pounds": 2.20462,
+    }
+
+    unit_from = unit_from.lower()  # Convert to lowercase
+    unit_to = unit_to.lower()      # Convert to lowercase
+
+    if unit_from in conversion_factors and unit_to in conversion_factors:
+        return value * (conversion_factors[unit_to] / conversion_factors[unit_from])
+    else:
+        return "Invalid units for weight conversion."
+
+
+while True:
+    choice = input("\n\nDo you want to continue the converter (yes / no): ")
+    
+    if choice.lower() == "yes":
+        unit = int(input("\nDo you wish to continue to length or weight (1 for length, 2 for weight): "))
+        
+        if unit == 1:
+            print("\nThe options you have are: \n 1. meters \n 2. centimeters \n 3. millimeters \n 4. kilometers \n 5. inches \n 6. feet \n ")
+            unit_from = input("Enter the unit you want to convert from: ").lower()  # Convert to lowercase
+            unit_to = input("Enter the unit you want to convert to: ").lower()      # Convert to lowercase
+            value = float(input("\nEnter the value: "))
+            
+            result = length_converter(value, unit_from, unit_to)
+            print("\nConversion Result:", result)
+            
+        elif unit == 2:
+            print("\n options you have are: \n 1. kilograms \n 2. grams \n 3. milligrams \n 4. tonnes \n 5. pounds \n")
+            unit_from = input("\nEnter the unit you want to convert from: ").lower()  # Convert to lowercase
+            unit_to = input("Enter the unit you want to convert to: ").lower()      # Convert to lowercase
+            value = float(input("\nEnter the value: "))
+            
+            result = weight_converter(value, unit_from, unit_to)
+            print("\nConversion Result:", result)
+            
+        else:
+            print("\nInvalid input! Try again!")
+    
+    elif choice.lower() == "no":
+        print("\nYou are quitting the unit converter!")
+        break
+    
+    else:
+        print("\nYou have entered an invalid input! Try again!")'''
