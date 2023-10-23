@@ -1,0 +1,16 @@
+while True:
+    choice = input("Do you want the word counter to start (yes/no): ")
+    
+    if choice.lower() == "yes":
+        user_input = input("Enter the text with spaces between words: ")
+        words = user_input.split()
+        word_count = len(words)
+        print("Word count:", word_count)
+    
+    elif choice.lower() == "no":
+        print("We are quitting the word counter!")
+        break
+        
+    else:
+        print("Entered the wrong choice. Try again.")
+        continue
